@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+GET     /github-recruiting/v1/languages/                    controllers.LanguageCtrl.getLanguages()
+#GET     /github-recruiting/v1/locations/                    controllers.LocationCtrl.getLocations()
+GET     /github-recruiting/v1/favorites/:page/:pageSize     controllers.FavoriteCtrl.getFavorites(page : Integer, pageSize: Integer)
+GET     /github-recruiting/v1/isfavorite/:login             controllers.FavoriteCtrl.isFavorite(login : String)
+
+POST    /github-recruiting/v1/favorites/add                 controllers.FavoriteCtrl.addFavorite()
+POST   /github-recruiting/v1/favorites/remove/:login       controllers.FavoriteCtrl.removeFavorite(login : String)
