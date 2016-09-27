@@ -1,0 +1,26 @@
+<div class="col-md-10">
+  <div>
+    <span class="text">
+      {{vm.detail.login}}
+    </span>
+    <span class="md-text" ng-if='vm.name != ""'>
+      {{vm.name}}
+    </span>
+    <span class="text" ng-if='vm.followers > -1'>
+      Followers: <i>{{vm.followers}}</i>
+    </span>
+  </div>
+  <div class="small-gray">
+    <span  ng-if='vm.location != ""'>
+      <span class="glyphicon glyphicon-map-marker" ></span>
+      {{vm.location}}
+    </span>
+    <span ng-if='vm.email != ""'>
+      <span class="glyphicon glyphicon-envelope"></span>
+        {{vm.email}}
+    </span>
+  </div>
+</div>
+<div class="col-md-2">
+  <span class="glyphicon glyphicon-star-empty" id="element_{{vm.index}}" ng-click='vm.markAsFavorite()'></span>
+</div>
